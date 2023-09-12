@@ -25,11 +25,13 @@
 }
 
 .item .text {
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: inset -1px -1px 8px 1px #dedede;
     position: absolute;
-    right: 20px;
-    bottom: 20px;
-    text-align: right;
+    bottom: 40px;
+    text-align: center;
     color: white;
+    width: 700px;
 }
 
 .thumbs {
