@@ -33,22 +33,24 @@
                     </div>
                     <!-- End item -->
                     <div class="thumbs">
-                        <div class="thumb active" @click="changeImage(0)">
-                            <img src="./assets/img/01.webp" alt="Svezia" />
+                        <div class="thumb" v-for="(slide, index) in slides"
+                            :key="index" @click="changeImage(index)"
+                            :class="{ active: activeImage === index }">
+                            <img :src="slide.image" :alt="slide.title" />
                         </div>
-                        <div class="thumb" @click="changeImage(1)">
+                        <!-- <div class="thumb" @click="changeImage(index)">
                             <img src="./assets/img/02.webp"
                                 alt="Ratchet & Clank" />
                         </div>
-                        <div class="thumb" @click="changeImage(2)">
+                        <div class="thumb" @click="changeImage(index)">
                             <img src="./assets/img/03.webp" alt="Fortnite" />
                         </div>
-                        <div class="thumb" @click="changeImage(3)">
+                        <div class="thumb" @click="changeImage(index)">
                             <img src="./assets/img/04.webp" alt="Stray" />
                         </div>
-                        <div class="thumb" @click="changeImage(4)">
+                        <div class="thumb" @click="changeImage(index)">
                             <img src="./assets/img/05.webp" alt="Avengers" />
-                        </div>
+                        </div> -->
                     </div>
                     <!-- End thumb -->
                 </div>
