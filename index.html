@@ -6,7 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Slider</title>
+        <!-- Title -->
         <link rel="stylesheet" href="./assets/css/style.css" />
+        <!-- CSS link -->
     </head>
 
     <body>
@@ -16,25 +18,19 @@
             <div class="container">
                 <div class="slider-wrapper" tabindex="0">
 
+                    <img :src="slides[activeImage].image" alt>
                     <div class="item">
-                        <img src="./assets/img/01.webp" alt="Spiderman" />
                         <div class="text">
-                            <h3>Spiderman</h3>
+                            <h3>{{slides.title}}</h3>
                             <p>
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Et temporibus voluptatum
-                                suscipit
-                                tempore aliquid deleniti aut
-                                veniam inventore eligendi ex ad ullam, cumque
-                                provident totam omnis, magnam dolores dolorum
-                                corporis.
+                                {{slides.text}}
                             </p>
                         </div>
                     </div>
-
+                    <!-- End item -->
                     <div class="thumbs">
-                        <div class="prev"></div>
-                        <div class="next"></div>
+                        <div class="prev" @click="prev()"></div>
+                        <div class="next" @click="next()"></div>
                         <div class="thumb active">
                             <img src="./assets/img/01.webp" alt="Svezia" />
                         </div>
@@ -52,13 +48,14 @@
                             <img src="./assets/img/05.webp" alt="Avengers" />
                         </div>
                     </div>
-
+                    <!-- End thumb -->
                 </div>
             </div>
 
         </div>
-
+        <!-- Vue.js link -->
         <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+        <!-- JS link -->
         <script src="./assets/js/script.js"></script>
     </body>
 
