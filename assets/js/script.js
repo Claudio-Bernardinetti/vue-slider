@@ -47,13 +47,24 @@ const { createApp } = Vue
         }
     },
     methods: {
-        next(){
-            console.log('next');
-            this.activeImage++
+
+        changeImage(index) {
+            this.activeImage = index;
         },
+        
         prev() {
-            console.log('prev');
-            this.activeImage--
+            if (this.activeImage > 0) {
+                this.activeImage--;
+            } else {
+                this.activeImage = this.slides.length - 1;
+            }
+        },
+        next() {
+            if (this.activeImage < this.slides.length - 1) {
+                this.activeImage++;
+            } else {
+                this.activeImage = 0;
+            }
         }
     }
 }).mount('#app');
