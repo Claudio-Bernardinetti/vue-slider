@@ -51,7 +51,7 @@ const { createApp } = Vue
         changeImage(index) {
             this.activeImage = index;
         },
-        
+
         prev() {
             if (this.activeImage > 0) {
                 this.activeImage--;
@@ -66,6 +66,11 @@ const { createApp } = Vue
                 this.activeImage = 0;
             }
         }
+    },
+    mounted() {
+        setInterval(() => {
+            this.next();
+        }, 3000); // Cambia image ogni tre secondi
     }
 }).mount('#app');
     
