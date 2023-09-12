@@ -18,7 +18,8 @@
             <div class="container">
                 <div class="slider-wrapper" tabindex="0">
 
-                    <div class="item">
+                    <div class="item" @mouseover="stopAutoplay"
+                        @mouseout="startAutoplay">
                         <div class="prev" @click="prev()"></div>
                         <!--  buttons -->
                         <img :src="slides[activeImage].image" alt>
@@ -32,7 +33,8 @@
                         <!--  buttons -->
                     </div>
                     <!-- End item -->
-                    <div class="thumbs">
+                    <div class="thumbs" @mouseover="stopAutoplay"
+                        @mouseout="startAutoplay">
                         <div class="thumb" v-for="(slide, index) in slides"
                             :key="index" @click="changeImage(index)"
                             :class="{ active: activeImage === index }">
