@@ -26,13 +26,14 @@
 }
 
 .item .text {
-    background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: inset -1px -1px 8px 1px #dedede;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: inset -1px -1px 8px 1px #dedede3e;
     position: absolute;
     bottom: 40px;
+    left: 50px;
     text-align: center;
     color: white;
-    width: 700px;
+    width: 600px;
 }
 
 .thumbs {
