@@ -14,14 +14,14 @@ Consigli del giorno:
 regola d'oro: riciclare ovunque possibile! Questo significa che per la parte di markup possiamo recuperare html e css dell'esercizio svolto qualche giorno fa: è già tutto pronto!
 il riciclo spesso va a braccetto con le funzioni! Sapendole sfruttare bene, l'esercizio si riduce a poche righe ;) */
 
-const { createApp } = Vue
-    createApp({
-    data() {
+const { createApp } = Vue  // Importa il metodo createApp da Vue.js
+    createApp({   // Crea una nuova app Vue
+    data() {   // Definisce le proprietà dei dati per l'app
         return { 
 
-        activeImage: 0,
+        activeImage: 0,   // L'indice dell'immagine attualmente visualizzata
 
-        direction: 'next',
+        direction: 'next',  // La direzione in cui si muove il diaporama
         
         slides : [
             {
@@ -47,30 +47,30 @@ const { createApp } = Vue
             }
             ],
 
-            autoplay: null
+            autoplay: null  // Un segnaposto per la funzione setInterval autoplay
         }
     },
-    methods: {
+    methods: {  // Definisce i metodi per l'app
 
-        changeImage(index) {
+        changeImage(index) {  // Cambia l'immagine attiva con quella all'indice fornito
             this.activeImage = index;
         },
 
-        prev() {
+        prev() {  // Passa all'immagine precedente, o all'ultima immagine se attualmente alla prima
             if (this.activeImage > 0) {
                 this.activeImage--;
             } else {
                 this.activeImage = this.slides.length - 1;
             }
         },
-        next() {
+        next() {  // Passa all'immagine successiva, o alla prima immagine se attualmente all'ultima
             if (this.activeImage < this.slides.length - 1) {
                 this.activeImage++;
             } else {
                 this.activeImage = 0;
             }
         },
-        startAutoplay() {
+        startAutoplay() {  // Inizia l'autoplay del diaporama ogni 3 secondi
             this.autoplay = setInterval(() => {
                 if (this.direction === 'next') {
                     this.next();
@@ -79,13 +79,13 @@ const { createApp } = Vue
                 }
             }, 3000); // Cambia image ogni 3 sec
         },
-        stopAutoplay() {
+        stopAutoplay() {  // Ferma l'autoplay del diaporama
             clearInterval(this.autoplay); 
         }
     },
     
-    mounted() {
+    mounted() {  // Aggancio del ciclo di vita che viene chiamato dopo che l'istanza è stata montata
         this.startAutoplay();
     }
-}).mount('#app');
+}).mount('#app');  // Monta l'app su un elemento con id 'app'
     

@@ -16,6 +16,7 @@
     width: 700px;
     height: 300px;
     position: relative;
+    border: 2px solid black;
 }
 
 .item img {
@@ -39,6 +40,8 @@
     height: 300px;
     background: #000;
     position: relative;
+    
+
 }
 
 .thumb {
@@ -68,6 +71,7 @@
     transform: translate(-50%);
     cursor: pointer;
     z-index: 999;
+    border: 1px solid black;
 }
 
 .next {
@@ -91,6 +95,7 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     top: 35%;
     left: 50%;
     transform: translate(-50%) rotate(-45deg);
+    
 }
 
 .next::before {
